@@ -1,6 +1,6 @@
 oraprep_db Cookbook
 =======================
-This cookbook makes your RHEL 5 host ready for Oracle Fusion Installation.
+This cookbook makes your RHEL 5 host ready for Oracle Database Installation.
 
 Requirements
 ------------
@@ -20,9 +20,9 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['oraprep_db']['bacon']</tt></td>
+    <td><tt>['oraprep_db']['tomato']</tt></td>
     <td>Boolean</td>
-    <td>whether to include bacon</td>
+    <td>whether to include tomato</td>
     <td><tt>true</tt></td>
   </tr>
 </table>
