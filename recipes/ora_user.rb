@@ -1,6 +1,6 @@
 
 group 'oinstall' do
-    gid node[:oraprep_fusion][:user][:gid]
+    gid node[:oraprep_db][:user][:gid]
 end
 execute "doit" do
   command <<-EOF
@@ -12,10 +12,10 @@ end
 
 user 'oracle' do
     supports :manage_home => true
-    uid node[:oraprep_fusion][:user][:uid]
-    gid node[:oraprep_fusion][:user][:gid]
-    home node[:oraprep_fusion][:ora_base]
-    shell node[:oraprep_fusion][:user][:shell]
+    uid node[:oraprep_db][:user][:uid]
+    gid node[:oraprep_db][:user][:gid]
+    home node[:oraprep_db][:ora_base]
+    shell node[:oraprep_db][:user][:shell]
     comment 'Oracle User'
 end
 
@@ -26,14 +26,14 @@ template "/u01/app/oracle/.profile" do
     group 'oinstall'
 end
 
-yum_package File.basename(node[:oraprep_fusion][:user][:shell])
+yum_package File.basename(node[:oraprep_db][:user][:shell])
 
 # Configure the oracle user.
 # Make it a member of the appropriate supplementary groups, and
 # ensure its environment will be set up properly upon login.
- node[:oraprep_fusion][:user][:sup_grps].each_key do |grp|
+ node[:oraprep_db][:user][:sup_grps].each_key do |grp|
    group grp do
-   gid node[:oraprep_fusion][:user][:sup_grps][grp]
+   gid node[:oraprep_db][:user][:sup_grps][grp]
    members ['oracle']
    append true
  end
@@ -53,5 +53,5 @@ execute 'gen_dir_colors' do
    group 'oinstall'
    cwd '/u01/app/oracle'
    creates '/u01/app/oracle/.dir_colors'
-   only_if {node[:oraprep_fusion][:user][:shell] != '/bin/bash'}
+   only_if {node[:oraprep_db][:user][:shell] != '/bin/bash'}
 end

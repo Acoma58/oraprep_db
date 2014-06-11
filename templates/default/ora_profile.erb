@@ -2,7 +2,7 @@
 ulimit -S -c unlimited > /dev/null 2>&1
 
 EDITOR=/bin/vi
-ORACLE_BASE=<%= node[:oraprep_fusion][:ora_base] %>
+ORACLE_BASE=<%= node[:oraprep_db][:ora_base] %>
 ORACLE_SID=
 ORACLE_UNQNAME=
 ORACLE_HOSTNAME=`hostname -f`
@@ -21,10 +21,10 @@ export PATH
 
 
 
-alias checkdumps='du -hs <%= node[:oraprep_fusion][:ora_base] %>/admin/*/*'
+alias checkdumps='du -hs <%= node[:oraprep_db][:ora_base] %>/admin/*/*'
 alias dba='sqlplus "/ as sysdba"'
 alias pp='ps -ef | grep ora_pmon'
-alias cdora='cd <%= node[:oraprep_fusion][:ora_base] %>'
+alias cdora='cd <%= node[:oraprep_db][:ora_base] %>'
 alias ls='ls --color=auto'
 
 

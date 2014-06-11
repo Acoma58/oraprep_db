@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: oraprep_fusion
+# Cookbook Name:: oraprep_db
 # Recipe:: default
 #
 # Copyright 2014, San Diego State University
@@ -9,7 +9,7 @@
  
 include_recipe 'sysctl'
 
-include_recipe 'oraprep_fusion::ora_user'
+include_recipe 'oraprep_db::ora_user'
 
 sysctl_param  'kernel.shmmax' do
    value '4294967295'

@@ -1,4 +1,4 @@
-oraprep_fusion Cookbook
+oraprep_db Cookbook
 =======================
 This cookbook makes your RHEL 5 host ready for Oracle Fusion Installation.
 
@@ -11,7 +11,7 @@ Attributes
 ----------
 
 e.g.
-#### oraprep_fusion::default
+#### oraprep_db::default
 <table>
   <tr>
     <th>Key</th>
@@ -20,7 +20,7 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['oraprep_fusion']['bacon']</tt></td>
+    <td><tt>['oraprep_db']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -29,16 +29,16 @@ e.g.
 
 Usage
 -----
-#### oraprep_fusion::default
+#### oraprep_db::default
 
 e.g.
-Just include `oraprep_fusion` in your node's `run_list`:
+Just include `oraprep_db` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[oraprep_fusion]"
+    "recipe[oraprep_db]"
   ]
 }
 ```

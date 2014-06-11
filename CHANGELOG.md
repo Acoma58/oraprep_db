@@ -1,11 +1,11 @@
-oraprep_fusion CHANGELOG
+oraprep_db CHANGELOG
 ========================
 
-This file is used to list changes made in each version of the oraprep_fusion cookbook.
+This file is used to list changes made in each version of the oraprep_db cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of oraprep_fusion
+- [your_name] - Initial release of oraprep_db
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
