@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 oraprep_db Cookbook
 =======================
 This cookbook makes your RHEL 5 host ready for Oracle Database Installation.
@@ -54,4 +53,3 @@ oraprep_db
 ==========
 
 Prepare RHEL hosts for Oracle DB
->>>>>>> 22a1c12f1d4f1320b905102da97133b49d58ec9c
