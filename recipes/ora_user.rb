@@ -2,12 +2,11 @@
 group 'oinstall' do
     gid node[:oraprep_db][:user][:gid]
 end
+
 execute "doit" do
   command <<-EOF
-  mkdir -pv /u01/app/oracle
-  chown -R oracle.oinstall /u01/app/oracle
-EOF
-  creates '/u01/app/oracle'
+   mkdir -p /u01/app/
+  EOF
 end
 
 user 'oracle' do
@@ -17,6 +16,18 @@ user 'oracle' do
     home node[:oraprep_db][:ora_base]
     shell node[:oraprep_db][:user][:shell]
     comment 'Oracle User'
+end
+
+directory "/u01/app/oracle" do
+  action :create
+  owner 'oracle'
+  group 'oinstall'
+end
+
+directory "/u01/app/tmp" do
+  action :create
+  owner 'oracle'
+  group 'oinstall'
 end
 
 template "/u01/app/oracle/.profile" do
