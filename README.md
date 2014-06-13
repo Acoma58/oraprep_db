@@ -20,9 +20,9 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['oraprep_db']['tomato']</tt></td>
+    <td><tt>['oraprep_db']['mango']</tt></td>
     <td>Boolean</td>
-    <td>whether to include tomato</td>
+    <td>whether to include a mango</td>
     <td><tt>true</tt></td>
   </tr>
 </table>
@@ -42,14 +42,5 @@ Just include `oraprep_db` in your node's `run_list`:
   ]
 }
 ```
-
-Contributing
-------------
-License and Authors
--------------------
-Authors: TODO: List authors
-=======
-oraprep_db
-==========
 
 Prepare RHEL hosts for Oracle DB
